@@ -26,6 +26,7 @@ main {
   /* text-align: center; */
 }
 p {
+  background: #fff;
   border: 1px solid #FFF;
   display: block;
   width: 100px;
@@ -41,8 +42,8 @@ p {
 }
 
 .choices > li {
-  /* 表示用。あとでボーダー削除 */
-  border: 1px solid #ccc;
+  /* 開発表示用。あとでボーダー削除 */
+  /* border: 1px solid #ccc; */
 
   padding: 0px;
   cursor: pointer;
