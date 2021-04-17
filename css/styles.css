@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-size: 16px;
+  font-family: Verdana, sans-serif;
+  color: #333;/* 少し明るい黒にして見やすく */
+  background: #f59b008e;
+  user-select: none;
+  text-align: center;
+}
+
+main {
+  margin: 20px auto;
+  width: 300px;
+  background: #f59b00a9;
+  padding: 15px 30px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  user-select: none;
+}
+
+.container {
+  justify-content: space-between;
+  padding: 8px 0 8px;
+  line-height: 20px;
+  /* text-align: center; */
+}
+p {
+  border: 1px solid #FFF;
+  display: block;
+  width: 100px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  text-align: center;
+  border-radius: 16px;
+}
+.choices {
+  padding: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.choices > li {
+  /* 表示用。あとでボーダー削除 */
+  border: 1px solid #ccc;
+
+  padding: 0px;
+  cursor: pointer;
+  list-style: none;
+  text-align: left;
+  transition-property: transform;
+  transition-duration: 0.3s;
+}
+
+.choices > li:hover {
+  opacity: 0.8;
+  /* 打消し線 */
+  /* text-decoration: line-through; */
+}
+
+.bought {
+  /* 打消し線 */
+  text-decoration: line-through;
+  /* transition-property: transform;
+  transition-duration: 0.5s; */
+  transform: translateX(30px);
+
+}
+
+.btn {
+  text-decoration: none;
+  background: #fff;
+  color: #f59a00;
+  border: 1px solid;
+  display: block;
+  width: 160px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  text-align: center;
+  user-select: none;
+  /* 文字の高さ設定 */
+  line-height: 45px;
+  /* ボタンを中央寄せ 上 | 左右 | 下 */
+  margin: 20px auto 0;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.mes {
+  text-decoration: none;
+  color: #333;/* 少し明るい黒にして見やすく */
+  display: block;
+  width: 130px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* .drunk {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  width: 138px;
+  font-weight: bold;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  text-align: center;
+} */
+
+footer {
+  padding: 16px 0;
+  background: #323135;
+  color: #98969c;
+  text-align: center;
+}
