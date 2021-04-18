@@ -57,11 +57,11 @@ p {
 } */
 
 .buy {
-  color: #fff;
+  color: #333;
 }
 
 .bought {
-  color: #333;/* 少し明るい黒にして見やすく */
+  color: #666;/* 少し明るい黒にして見やすく */
   /* 打消し線 */
   text-decoration: line-through;
   /* transition-property: transform;
