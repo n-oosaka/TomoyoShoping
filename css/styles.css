@@ -44,7 +44,7 @@ p {
 .choices > li {
   /* 開発表示用。あとでボーダー削除 */
   /* border: 1px solid #ccc; */
-  padding: 0px;
+  padding: 3px 0;
   cursor: pointer;
   list-style: none;
   text-align: left;
