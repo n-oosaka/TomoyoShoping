@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-size: 16px;
+  font-size: 20px;
   font-family: Verdana, sans-serif;
   color: #333;/* 少し明るい黒にして見やすく */
   background: #f59b008e;
@@ -13,7 +13,7 @@ main {
   width: 300px;
   background: #f59b00a9;
   padding: 15px 30px 15px;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   text-align: left;
   user-select: none;
@@ -29,7 +29,7 @@ p {
   background: #fff;
   border: 1px solid #FFF;
   display: block;
-  width: 100px;
+  width: 130px;
   margin-top: 8px;
   margin-bottom: 4px;
   text-align: center;
@@ -44,7 +44,6 @@ p {
 .choices > li {
   /* 開発表示用。あとでボーダー削除 */
   /* border: 1px solid #ccc; */
-
   padding: 0px;
   cursor: pointer;
   list-style: none;
@@ -53,19 +52,21 @@ p {
   transition-duration: 0.3s;
 }
 
-.choices > li:hover {
+/* .choices > li:hover {
   opacity: 0.8;
-  /* 打消し線 */
-  /* text-decoration: line-through; */
+} */
+
+.buy {
+  color: #fff;
 }
 
 .bought {
+  color: #333;/* 少し明るい黒にして見やすく */
   /* 打消し線 */
   text-decoration: line-through;
   /* transition-property: transform;
   transition-duration: 0.5s; */
   transform: translateX(30px);
-
 }
 
 .btn {
