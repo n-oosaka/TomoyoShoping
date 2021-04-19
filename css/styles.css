@@ -35,6 +35,16 @@ p {
   text-align: center;
   border-radius: 16px;
 }
+
+textarea {
+  /* textarea はインライン要素なのでブロック要素に変換した */
+  display: block;
+  /* 中央寄せ 上下 | 左右 */
+  margin: 0 auto;
+  /* 文字サイズを大きく */
+  font-size:x-large;
+}
+
 .choices {
   padding: 0;
   margin-top: 0px;

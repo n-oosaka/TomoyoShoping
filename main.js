@@ -112,9 +112,14 @@
   // new drank('drankEvening','夜のお薬');
 
   
+  // 定数
+  const allul = document.querySelectorAll('ul')
+  const lilist = document.querySelectorAll('ul > li')
+  const pp = document.querySelectorAll('p')
+  const confirm = document.getElementById('confirm');
+  const freespace = document.getElementById('freespace');
 
   // ulを全て取得してクリック時に bought クラスをON OFF する
-  const allul = document.querySelectorAll('ul')
   allul.forEach((ul) => {
     ul.addEventListener('click', e => {
       // クリックされた要素が li かチェックする
@@ -126,11 +131,9 @@
     });
   });
 
-  const pp = document.querySelectorAll('p')
+  
 
-  // 決定ボタンで打ち消し線のリストを削除する
-  const confirm = document.getElementById('confirm');
-  const lilist = document.querySelectorAll('ul > li')
+  // 買い物決定ボタンで打ち消し線のリストを削除する
   confirm.addEventListener('click', () => {
     lilist.forEach((li) => {
       // 打ち消し線のリストを削除
@@ -146,11 +149,14 @@
         pp[index].remove();
 
         ul.remove();
-        console.log('index');
-        console.log(index);
+        // console.log('index');
+        // console.log(index);
       }
       // console.log(childElementCount)
     });
+    if (freespace.value === '') {
+      freespace.remove();
+    }
     
   });
 
