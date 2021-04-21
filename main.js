@@ -127,11 +127,62 @@
         // toggle で ONOFFする
         e.target.classList.toggle('bought');
         e.target.classList.toggle('buy');
+        // クリックされる度にデータをローカルに保存する
+        saveList();
       }
     });
   });
 
-  
+  // 買い物リストの ON OFF を保存する
+  function saveList() {
+    var strValue = "";
+    // 項目の数だけループして初期セーブデータを作成する
+    for (let i = 0; i < lilist.length; i++) {
+      // 初回データ以外に,を付与する
+      if (i !== 0) {
+        strValue += ',';
+      }
+      // bought = 0 , buy = 1
+      if (lilist[i].classList.value === 'bought') {
+        strValue += '0';
+      } else {
+        strValue += '1';
+      }
+    }
+    // 保存 setItem
+    localStorage.setItem('shoppingList.text', strValue);
+  }
+
+  // ローカルストレージ読み込み
+  function readLocalStorage() {
+    var strValue = localStorage.getItem('shoppingList.text');
+    // ファイルが存在するなら読み込む
+    if (strValue !== null) {
+      // 配列に変換
+      var shopListArray = strValue.split(',');
+      // flgがある項目のクラスをbuyに変更する
+      shopListArray.forEach((flg,index) => {
+        if (flg === '1') {
+          lilist[index].classList.toggle('bought');
+          lilist[index].classList.toggle('buy');
+        }
+      });
+    // ファイルが存在しない場合、新しく作成する
+    } else {
+      // 初期セーブデータ作成
+      var strValue = "";
+      // 項目の数だけループして初期セーブデータを作成する
+      for (let i = 0; i < lilist.length; i++) {
+        // 初回データ以外に,を付与する
+        if (i !== 0) {
+          strValue += ',';
+        }
+        strValue += '0';
+      }
+      // 保存
+      localStorage.setItem('shoppingList.text', strValue);
+    }
+  }
 
   // 買い物決定ボタンで打ち消し線のリストを削除する
   confirm.addEventListener('click', () => {
@@ -157,9 +208,9 @@
     if (freespace.value === '') {
       freespace.remove();
     }
-    
   });
-
+    // ローカルストレージ読み込み
+    readLocalStorage();
 
 /////////////////////////////////////////////////////
 // テストコード（コメントアウト）
