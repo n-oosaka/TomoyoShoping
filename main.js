@@ -151,11 +151,14 @@
     }
     // 保存 setItem
     localStorage.setItem('shoppingList.text', strValue);
+    localStorage.setItem('shoppingListMemo.text', freespace.value);
   }
 
   // ローカルストレージ読み込み
   function readLocalStorage() {
     var strValue = localStorage.getItem('shoppingList.text');
+    var strValueMemo = localStorage.getItem('shoppingListMemo.text');
+
     // ファイルが存在するなら読み込む
     if (strValue !== null) {
       // 配列に変換
@@ -182,6 +185,19 @@
       // 保存
       localStorage.setItem('shoppingList.text', strValue);
     }
+
+    // ファイルが存在するなら読み込む(shoppingListMemo)
+    if (strValueMemo !== null) {
+      // フリースペースを読み込む
+      freespace.value = strValueMemo
+    // ファイルが存在しない場合、新しく作成する
+    } else {
+      // 初期セーブデータ作成
+      var strValueMemo = "";
+      // 保存
+      localStorage.setItem('shoppingListMemo.text', strValueMemo);
+    }
+    
   }
 
   // 買い物決定ボタンで打ち消し線のリストを削除する
@@ -205,9 +221,12 @@
       }
       // console.log(childElementCount)
     });
+    // 空欄なら削除
     if (freespace.value === '') {
       freespace.remove();
     }
+    // フリースペースを保存
+    localStorage.setItem('shoppingListMemo.text', freespace.value);
   });
     // ローカルストレージ読み込み
     readLocalStorage();
